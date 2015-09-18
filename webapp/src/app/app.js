@@ -4,7 +4,8 @@
         'lumx',
         'ui.router',
         'ngSanitize',
-        'roomanizer.public'
+        'roomanizer.public',
+        'roomanizer.private'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -23,4 +24,7 @@
     .controller("AppCtrl", function AppCtrl($state){
         $state.go("roomanizer.public");
     });
+    /*.controller("AppCtrl", function AppCtrl($state){
+        $state.go("roomanizer.private");
+    });*/
 }());
