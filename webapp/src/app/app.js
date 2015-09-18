@@ -3,7 +3,8 @@
     angular.module('roomanizer', [
         'lumx',
         'ui.router',
-        'ngSanitize'
+        'ngSanitize',
+        'roomanizer.public'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -19,7 +20,7 @@
         ;
         $urlRouterProvider.otherwise('/');
     })
-    .controller("AppCtrl", function AppCtrl(){
-        // Empty ctrl
+    .controller("AppCtrl", function AppCtrl($state){
+        $state.go("roomanizer.public");
     });
 }());
