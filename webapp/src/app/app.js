@@ -24,7 +24,4 @@
     .controller("AppCtrl", function AppCtrl($state){
         $state.go("roomanizer.public");
     });
-    /*.controller("AppCtrl", function AppCtrl($state){
-        $state.go("roomanizer.private");
-    });*/
 }());
