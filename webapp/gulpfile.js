@@ -7,6 +7,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var php = require('gulp-connect-php');
 var wrench = require('wrench');
 
 /**
@@ -26,4 +27,19 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
  */
 gulp.task('default', ['clean'], function () {
   gulp.start('build');
+});
+
+
+/**
+ * Create a task to serve the app
+ * Source : https://scotch.io/tutorials/use-gulp-to-start-a-laravel-php-server
+ */
+gulp.task('serve', function() {
+
+    // start the php server
+    // make sure we use the public directory since this is Laravel
+    php.server({
+        base: '../api/public'
+    });
+
 });
